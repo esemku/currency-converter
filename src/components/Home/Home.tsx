@@ -1,8 +1,14 @@
 import { AmountInput, Button } from 'components/common';
 import React, { useEffect, useState } from 'react';
 import { shallowEqual, useDispatch, useSelector } from 'react-redux';
-import { getCurrenciesListRequest } from 'redux/actions/currencyConverterActions';
-import { getCurrenciesList } from 'redux/selectors/currenciesSelectors';
+import {
+  convertFromCurrencyRequest,
+  getCurrenciesListRequest,
+} from 'redux/actions/currencyConverterActions';
+import {
+  getConvertedAmount,
+  getCurrenciesList,
+} from 'redux/selectors/currenciesSelectors';
 import useStyles from './styles';
 
 const Home: React.FC = () => {
@@ -10,10 +16,11 @@ const Home: React.FC = () => {
   const [amountInput, setAmountInput] = useState('');
   const dispatch = useDispatch();
   const { currenciesList } = useSelector(getCurrenciesList, shallowEqual);
+  const { convertedAmount } = useSelector(getConvertedAmount, shallowEqual);
 
   useEffect(() => {
-    console.log('currenciesList: ', currenciesList);
-  }, [currenciesList]);
+    console.log('convertedAmount: ', convertedAmount);
+  }, [convertedAmount]);
 
   useEffect(() => {
     console.log('amountInput: ', amountInput);
@@ -25,6 +32,13 @@ const Home: React.FC = () => {
 
   const convertCurrencies = () => {
     console.log('convertCurrencies');
+    dispatch(
+      convertFromCurrencyRequest({
+        fromCurrency: 'USD',
+        toCurrency: 'EUR',
+        amount: 15000,
+      }),
+    );
   };
 
   return (

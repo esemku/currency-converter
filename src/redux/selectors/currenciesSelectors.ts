@@ -6,3 +6,8 @@ export const getCurrenciesList = createSelector(
   getCurrencies,
   (currenciesList) => currenciesList,
 );
+
+export const getConvertedAmount = createSelector(
+  getCurrencies,
+  (convertedAmount) => convertedAmount,
+);

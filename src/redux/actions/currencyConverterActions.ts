@@ -4,6 +4,13 @@ export const getCurrenciesListRequest = () => ({
   type: currencyConverterConstants.GET_CURRENCIES_LIST_REQUEST,
 });
 
-export const getCurrenciesListSuccess = () => ({
-  type: currencyConverterConstants.GET_CURRENCIES_LIST_SUCCESS,
+export const convertFromCurrencyRequest = ({
+  fromCurrency,
+  toCurrency,
+  amount,
+}) => ({
+  type: currencyConverterConstants.CONVERT_FROM_CURRENCY_REQUEST,
+  fromCurrency,
+  toCurrency,
+  amount,
 });

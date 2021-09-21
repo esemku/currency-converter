@@ -1,3 +1,4 @@
+import { convertFromCurrencyWatcher } from './convertFromCurrencySaga';
 import { getCurrenciesListWatcher } from './getCurrenciesListSaga';
 
-export default [getCurrenciesListWatcher()];
+export default [getCurrenciesListWatcher(), convertFromCurrencyWatcher()];

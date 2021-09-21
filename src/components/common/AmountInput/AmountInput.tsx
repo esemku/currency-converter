@@ -19,7 +19,7 @@ const AmountInput: React.FC<IProps> = ({ inputName, label, onChange }) => {
       <CurrencyInput
         id={inputName}
         name={inputName}
-        defaultValue={1000}
+        placeholder="e.g.  1,000.00"
         decimalScale={2}
         onValueChange={onChange}
         decimalSeparator="."
