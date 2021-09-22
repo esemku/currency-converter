@@ -84,6 +84,7 @@ export const colors = {
   grayQuinary: '#2b2b40',
   graySenary: '#323248',
   graySeptenary: '#6d6d80',
+  grayOctonary: '#565674',
   redPrimary: '#f64e60',
   whitePrimary: '#fff',
   bluePrimary: '#3699ff',

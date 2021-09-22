@@ -6,12 +6,22 @@ export default makeStyles((theme) => ({
     position: 'relative',
     marginBottom: 30,
     width: '100%',
+    '& .MuiInputBase-input': {
+      padding: 0,
+    },
+    '& .MuiInputBase-root, .MuiInputBase-root::before': {
+      border: 'none',
+      borderBottom: 'none !important',
+    },
+    '& .MuiInput-underline::after': {
+      border: 'none',
+    },
   },
-  input: {
+  select: {
     backgroundColor: colors.grayTertiary,
     color: colors.grayQuaternary,
     transition: 'color .2s ease, background-color .2s ease',
-    border: 'none',
+    border: `1px solid ${colors.grayTertiary}`,
     borderRadius: theme.shape.borderRadius,
     width: '100%',
     padding: '10px 18px',
@@ -39,5 +49,11 @@ export default makeStyles((theme) => ({
       fontWeight: fonts.weight.desktop.inputLabel,
       lineHeight: fonts.lineHeight.desktop.inputLabel,
     },
+  },
+  currencyFlag: {
+    marginRight: 16,
+  },
+  currencyName: {
+    opacity: 0.6,
   },
 }));

@@ -1,2 +1,2 @@
-export const GET_CURRENCIES_LIST = 'currencies.json/?obsolete=true';
+export const GET_CURRENCIES_LIST = 'currencies.json';
 export const CONVERT_FROM_CURRENCY = 'convert_from.json/?';
