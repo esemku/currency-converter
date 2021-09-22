@@ -9,5 +9,15 @@ export const getCurrenciesList = createSelector(
 
 export const getConvertedAmount = createSelector(
   getCurrencies,
-  (convertedAmount) => convertedAmount,
+  (convertedAmount) => convertedAmount.convertedAmount,
+);
+
+export const getConvertedAmountFromCode = createSelector(
+  getCurrencies,
+  (convertedAmount) => convertedAmount.convertedFrom,
+);
+
+export const getConvertedAmountToCode = createSelector(
+  getCurrencies,
+  (convertedAmount) => convertedAmount.convertedTo,
 );

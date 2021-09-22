@@ -6,6 +6,9 @@ export default makeStyles((theme) => ({
     position: 'relative',
     marginBottom: 16,
     width: '100%',
+    [theme.breakpoints.up('md')]: {
+      width: '30%',
+    },
   },
   input: {
     backgroundColor: colors.grayTertiary,

@@ -2,7 +2,7 @@ import clsx from 'clsx';
 import * as React from 'react';
 import useStyles from './styles';
 
-const IconUpDownArrows = ({
+const IconLeftRightArrows = ({
   className,
   onClick,
 }: React.SVGProps<SVGSVGElement>) => {
@@ -20,15 +20,15 @@ const IconUpDownArrows = ({
     >
       <path
         fill="#000"
-        d="M7 6.6V20c0 .6.4 1 1 1s1-.4 1-1V6.6H7zm8 10.8V4c0-.6.4-1 1-1s1 .4 1 1v13.4h-2z"
+        d="M17.4 7H4c-.6 0-1 .4-1 1s.4 1 1 1h13.4V7zM6.6 15H20c.6 0 1 .4 1 1s-.4 1-1 1H6.6v-2z"
       />
       <path
         fill="#000"
-        d="M3 6.6h10L8.7 2.3c-.4-.4-1-.4-1.4 0L3 6.6zm8 10.8h10l-4.3 4.3c-.4.4-1 .4-1.4 0L11 17.4z"
-        opacity="0.8"
+        d="M17.4 3v10l4.3-4.3c.4-.4.4-1 0-1.4L17.4 3zM6.6 11v10l-4.3-4.3c-.4-.4-.4-1 0-1.4L6.6 11z"
+        opacity="0.3"
       />
     </svg>
   );
 };
 
-export default IconUpDownArrows;
+export default IconLeftRightArrows;

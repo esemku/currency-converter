@@ -16,6 +16,9 @@ export default makeStyles((theme) => ({
     '& .MuiInput-underline::after': {
       border: 'none',
     },
+    [theme.breakpoints.up('md')]: {
+      width: '30%',
+    },
   },
   select: {
     backgroundColor: colors.grayTertiary,
@@ -25,6 +28,7 @@ export default makeStyles((theme) => ({
     borderRadius: theme.shape.borderRadius,
     width: '100%',
     padding: '10px 18px',
+    paddingRight: 28,
     fontSize: fonts.size.mobile.input,
     fontWeight: fonts.weight.mobile.input,
     lineHeight: fonts.lineHeight.mobile.input,

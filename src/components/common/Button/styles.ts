@@ -15,6 +15,8 @@ export default makeStyles((theme) => ({
       fontSize: fonts.size.desktop.button,
       fontWeight: fonts.weight.desktop.button,
       lineHeight: fonts.lineHeight.desktop.button,
+      width: 'min-content',
+      marginRight: 32,
     },
     padding: '11px 22px',
     width: '100%',

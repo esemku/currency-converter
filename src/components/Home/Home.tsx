@@ -1,5 +1,5 @@
 import { AmountInput, Button, SelectCurrency } from 'components/common';
-import { IconUpDownArrows } from 'components/common/icons';
+import { IconLeftRightArrows, IconUpDownArrows } from 'components/common/icons';
 import React, { useEffect, useState } from 'react';
 import { shallowEqual, useDispatch, useSelector } from 'react-redux';
 import {
@@ -22,6 +22,8 @@ const Home: React.FC = () => {
   const dispatch = useDispatch();
   const { currenciesList } = useSelector(getCurrenciesList, shallowEqual);
   const { convertedAmount } = useSelector(getConvertedAmount, shallowEqual);
+  const { convertedFrom } = useSelector(getConvertedAmount, shallowEqual);
+  const { convertedTo } = useSelector(getConvertedAmount, shallowEqual);
 
   useEffect(() => {
     dispatch(getCurrenciesListRequest());
@@ -66,15 +68,24 @@ const Home: React.FC = () => {
 
   const formatConvertedAmount = (amount) => {
     const arr = String(amount).split('.');
-    return `${arr[0]}.${arr[1].substring(0, 2)}`;
+
+    return (
+      <h2 className={styles.convertedAmount}>
+        {`${arr[0]}.${arr[1].substring(0, 2)}`}
+        <span className={styles.convertedAmountGloom}>
+          {arr[1].substring(2, 4)}&nbsp;
+        </span>
+        {getCurrencyName(convertedTo)[0].currency_name}
+      </h2>
+    );
   };
 
   return (
     <div className={styles.root}>
-      <div className={styles.content}>
-        <div className={styles.container}>
-          <h3 className={styles.contentHeader}>Currency Converter</h3>
-          <div className={styles.dashedLine} />
+      <div className={styles.container}>
+        <h3 className={styles.contentHeader}>Currency Converter</h3>
+        <div className={styles.dashedLine} />
+        <div className={styles.inputsWrapper}>
           <AmountInput
             inputName="amount"
             label="Amount"
@@ -87,7 +98,14 @@ const Home: React.FC = () => {
             value={currency.from}
             onChange={handleCurrencyFrom}
           />
-          <IconUpDownArrows onClick={exchangeCurrencySelectValues} />
+          <IconUpDownArrows
+            onClick={exchangeCurrencySelectValues}
+            className={styles.iconUpDownArrows}
+          />
+          <IconLeftRightArrows
+            onClick={exchangeCurrencySelectValues}
+            className={styles.iconLeftRightArrows}
+          />
           <SelectCurrency
             id="currencyTo"
             label="To"
@@ -95,6 +113,8 @@ const Home: React.FC = () => {
             value={currency.to}
             onChange={handleCurrencyTo}
           />
+        </div>
+        <div className={styles.converterResultWrapper}>
           {Array.isArray(currenciesList) &&
             currenciesList.length > 0 &&
             convertedAmount && (
@@ -102,13 +122,9 @@ const Home: React.FC = () => {
                 <span
                   className={styles.resultTextCurrencyToConvert}
                 >{`${amountInput} ${
-                  getCurrencyName(currency.from)[0].currency_name
+                  getCurrencyName(convertedFrom)[0].currency_name
                 } =`}</span>
-                <h2 className={styles.resultTextCurrencyConverted}>
-                  {`${formatConvertedAmount(convertedAmount)} ${
-                    getCurrencyName(currency.to)[0].currency_name
-                  }`}
-                </h2>
+                {formatConvertedAmount(convertedAmount)}
               </div>
             )}
           <Button

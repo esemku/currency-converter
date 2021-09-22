@@ -23,7 +23,7 @@ export function* fetchConvertFromCurrency({
 
     yield put({
       type: currencyConverterConstants.CONVERT_FROM_CURRENCY_SUCCESS,
-      data: response.data.to[0].mid,
+      data: response.data,
     });
   } catch (err) {
     console.warn(err);

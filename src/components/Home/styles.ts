@@ -2,11 +2,17 @@ import { makeStyles } from '@material-ui/core';
 import { colors, fonts } from 'theme';
 
 export default makeStyles((theme: any) => ({
-  root: {},
-  content: {
+  root: {
     padding: 16,
     [theme.breakpoints.up('sm')]: {
       padding: 50,
+    },
+  },
+  inputsWrapper: {
+    [theme.breakpoints.up('md')]: {
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'space-between',
     },
   },
   container: {
@@ -40,10 +46,11 @@ export default makeStyles((theme: any) => ({
       fontSize: fonts.size.desktop.span,
       fontWeight: fonts.weight.desktop.span,
       lineHeight: fonts.lineHeight.desktop.span,
+      whiteSpace: 'nowrap',
     },
     color: colors.grayQuaternary,
   },
-  resultTextCurrencyConverted: {
+  convertedAmount: {
     fontSize: fonts.size.mobile.h2,
     fontWeight: fonts.weight.mobile.h2,
     lineHeight: fonts.lineHeight.mobile.h2,
@@ -51,11 +58,40 @@ export default makeStyles((theme: any) => ({
       fontSize: fonts.size.desktop.h2,
       fontWeight: fonts.weight.desktop.h2,
       lineHeight: fonts.lineHeight.desktop.h2,
+      whiteSpace: 'nowrap',
+      margin: 0,
     },
     color: colors.whitePrimary,
     margin: '8px 0',
   },
+  convertedAmountGloom: {
+    opacity: 0.5,
+  },
   convertButton: {
     marginTop: 16,
+    [theme.breakpoints.up('md')]: {
+      marginTop: 0,
+    },
+  },
+  iconUpDownArrows: {
+    [theme.breakpoints.up('md')]: {
+      display: 'none',
+    },
+  },
+  iconLeftRightArrows: {
+    display: 'none',
+    marginTop: 4,
+    [theme.breakpoints.up('md')]: {
+      display: 'block',
+    },
+  },
+  converterResultWrapper: {
+    [theme.breakpoints.up('md')]: {
+      display: 'flex',
+      flexFlow: 'row-reverse',
+      alignItems: 'center',
+      justifyContent: 'flex-end',
+      minHeight: 51,
+    },
   },
 }));

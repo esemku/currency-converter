@@ -2,7 +2,11 @@ import * as currencyConverterConstants from '../constants/currencyConverterConst
 
 const initialState = {
   currenciesList: [],
-  convertedAmount: '',
+  convertedAmount: {
+    amount: null,
+    from: '',
+    to: '',
+  },
 };
 
 export default function (state = initialState, action) {
@@ -16,7 +20,11 @@ export default function (state = initialState, action) {
     case currencyConverterConstants.CONVERT_FROM_CURRENCY_SUCCESS: {
       return {
         ...state,
-        convertedAmount: action.data,
+        convertedAmount: {
+          convertedAmount: action.data.to[0].mid,
+          convertedFrom: action.data.from,
+          convertedTo: action.data.to[0].quotecurrency,
+        },
       };
     }
     default: {
