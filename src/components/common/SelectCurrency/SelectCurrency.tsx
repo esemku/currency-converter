@@ -27,16 +27,20 @@ const SelectCurrency: React.FC<IProps> = ({
       <label htmlFor={id} className={styles.label}>
         {label}
       </label>
-
       <Select
         id={id}
         value={value}
         onChange={onChange}
         IconComponent={IconChevronDown}
         className={styles.select}
+        MenuProps={{ className: styles.selectMenu }}
       >
         {currenciesList.map((currencyItem) => (
-          <MenuItem value={currencyItem.iso} key={nanoid()}>
+          <MenuItem
+            value={currencyItem.iso}
+            key={nanoid()}
+            className={styles.selectMenuItem}
+          >
             <CurrencyFlag
               currency={currencyItem.iso}
               size="sm"

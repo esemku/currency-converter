@@ -1,5 +1,4 @@
 import { makeStyles } from '@material-ui/core';
-
 import { colors, fonts } from 'theme';
 
 export default makeStyles((theme) => ({
@@ -23,5 +22,12 @@ export default makeStyles((theme) => ({
       backgroundColor: colors.blueSecondary,
     },
     transition: 'background-color .15s ease-in-out',
+    '&:disabled': {
+      opacity: 0.6,
+      cursor: 'default',
+      '&:hover': {
+        backgroundColor: colors.bluePrimary,
+      },
+    },
   },
 }));

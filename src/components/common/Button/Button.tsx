@@ -1,3 +1,4 @@
+import clsx from 'clsx';
 import React from 'react';
 import useStyles from './styles';
 
@@ -5,16 +6,17 @@ interface IProps {
   name: string;
   disabled: boolean;
   onClick: any;
+  className: string;
 }
 
-const Button: React.FC<IProps> = ({ name, disabled, onClick }) => {
+const Button: React.FC<IProps> = ({ name, disabled, onClick, className }) => {
   const styles = useStyles();
 
   /* eslint-disable react/button-has-type */
   return (
     <button
       type="button"
-      className={styles.root}
+      className={clsx(styles.root, className)}
       disabled={disabled}
       onClick={onClick}
     >

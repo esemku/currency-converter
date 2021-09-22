@@ -4,7 +4,7 @@ import { colors, fonts } from 'theme';
 export default makeStyles((theme) => ({
   root: {
     position: 'relative',
-    marginBottom: 30,
+    marginBottom: 16,
     width: '100%',
     '& .MuiInputBase-input': {
       padding: 0,
@@ -37,6 +37,27 @@ export default makeStyles((theme) => ({
     marginBottom: 6,
     '&:focus': {
       backgroundColor: colors.blackSecondary,
+    },
+  },
+  selectMenu: {
+    '& .MuiMenu-paper': {
+      backgroundColor: colors.graySecondary,
+    },
+    '& .MuiListItem-root.Mui-selected': {
+      backgroundColor: colors.bluePrimary,
+      color: colors.whitePrimary,
+    },
+  },
+  selectMenuItem: {
+    color: colors.grayQuaternary,
+    fontSize: 13,
+    fontWeight: 400,
+    lineHeight: '19.5px',
+    minHeight: 'unset',
+    padding: '10px 16px',
+    '&:hover': {
+      backgroundColor: colors.blueQuaternary,
+      color: colors.bluePrimary,
     },
   },
   label: {

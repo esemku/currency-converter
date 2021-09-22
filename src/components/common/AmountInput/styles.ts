@@ -4,7 +4,7 @@ import { colors, fonts } from 'theme';
 export default makeStyles((theme) => ({
   root: {
     position: 'relative',
-    marginBottom: 30,
+    marginBottom: 16,
     width: '100%',
   },
   input: {
