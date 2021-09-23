@@ -5,7 +5,7 @@ import useStyles from './styles';
 interface IProps {
   inputName: string;
   label: string;
-  onChange: any;
+  onChange: (amount: string) => void;
 }
 
 const AmountInput: React.FC<IProps> = ({ inputName, label, onChange }) => {
@@ -25,6 +25,7 @@ const AmountInput: React.FC<IProps> = ({ inputName, label, onChange }) => {
         decimalSeparator="."
         groupSeparator=","
         className={styles.input}
+        data-testid="amountInput"
       />
     </div>
   );

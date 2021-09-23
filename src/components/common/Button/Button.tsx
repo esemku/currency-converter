@@ -5,7 +5,7 @@ import useStyles from './styles';
 interface IProps {
   name: string;
   disabled: boolean;
-  onClick: any;
+  onClick: () => void;
   className: string;
 }
 
@@ -19,6 +19,7 @@ const Button: React.FC<IProps> = ({ name, disabled, onClick, className }) => {
       className={clsx(styles.root, className)}
       disabled={disabled}
       onClick={onClick}
+      data-testid="convertButton"
     >
       {name}
     </button>

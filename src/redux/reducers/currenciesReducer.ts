@@ -4,8 +4,8 @@ const initialState = {
   currenciesList: [],
   convertedAmount: {
     amount: null,
-    from: '',
-    to: '',
+    convertedFrom: '',
+    convertedTo: '',
   },
 };
 

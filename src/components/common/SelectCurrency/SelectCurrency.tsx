@@ -2,15 +2,16 @@ import { MenuItem, Select } from '@material-ui/core';
 import { nanoid } from 'nanoid';
 import React from 'react';
 import CurrencyFlag from 'react-currency-flags';
+import { ICurrencyListItem } from 'types/currencies';
 import { IconChevronDown } from '../icons';
 import useStyles from './styles';
 
 interface IProps {
-  currenciesList: any;
+  currenciesList: ICurrencyListItem[];
   value: string;
   label: string;
   id: string;
-  onChange: any;
+  onChange: (e: React.ChangeEvent<HTMLSelectElement>) => void;
 }
 
 const SelectCurrency: React.FC<IProps> = ({
@@ -34,8 +35,9 @@ const SelectCurrency: React.FC<IProps> = ({
         IconComponent={IconChevronDown}
         className={styles.select}
         MenuProps={{ className: styles.selectMenu }}
+        data-testid={`selectCurrency${id}`}
       >
-        {currenciesList.map((currencyItem) => (
+        {currenciesList.map((currencyItem: ICurrencyListItem) => (
           <MenuItem
             value={currencyItem.iso}
             key={nanoid()}

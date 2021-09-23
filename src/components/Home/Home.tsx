@@ -10,6 +10,7 @@ import {
   getConvertedAmount,
   getCurrenciesList,
 } from 'redux/selectors/currenciesSelectors';
+import { ICurrencyListItem } from 'types/currencies';
 import useStyles from './styles';
 
 const Home: React.FC = () => {
@@ -39,14 +40,14 @@ const Home: React.FC = () => {
     );
   };
 
-  const handleCurrencyFrom = (e) => {
+  const handleCurrencyFrom = (e: React.ChangeEvent<HTMLSelectElement>) => {
     setCurrency({
       ...currency,
       from: e.target.value,
     });
   };
 
-  const handleCurrencyTo = (e) => {
+  const handleCurrencyTo = (e: React.ChangeEvent<HTMLSelectElement>) => {
     setCurrency({
       ...currency,
       to: e.target.value,
@@ -60,13 +61,14 @@ const Home: React.FC = () => {
     });
   };
 
-  const getCurrencyName = (currencyCode) => {
+  const getCurrencyName = (currencyCode: string) => {
     return currenciesList.filter(
-      (currencyObject) => currencyObject.iso === currencyCode,
+      (currencyObject: ICurrencyListItem) =>
+        currencyObject.iso === currencyCode,
     );
   };
 
-  const formatConvertedAmount = (amount) => {
+  const formatConvertedAmount = (amount: number) => {
     const arr = String(amount).split('.');
 
     return (
@@ -118,7 +120,7 @@ const Home: React.FC = () => {
           {Array.isArray(currenciesList) &&
             currenciesList.length > 0 &&
             convertedAmount && (
-              <div>
+              <div data-testid="convertedAmountWrapper">
                 <span
                   className={styles.resultTextCurrencyToConvert}
                 >{`${amountInput} ${

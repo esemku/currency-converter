@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Button /> renders correctly 1`] = `
+<div>
+  <button
+    class="makeStyles-root-1 className"
+    data-testid="convertButton"
+    type="button"
+  >
+    name
+  </button>
+</div>
+`;

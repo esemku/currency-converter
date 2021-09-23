@@ -25,7 +25,7 @@ const IconLeftRightArrows = ({
       <path
         fill="#000"
         d="M17.4 3v10l4.3-4.3c.4-.4.4-1 0-1.4L17.4 3zM6.6 11v10l-4.3-4.3c-.4-.4-.4-1 0-1.4L6.6 11z"
-        opacity="0.3"
+        opacity="0.8"
       />
     </svg>
   );

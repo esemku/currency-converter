@@ -45,11 +45,13 @@
     "@typescript-eslint/explicit-module-boundary-types": "off",
     "react/jsx-one-expression-per-line": "off",
     "no-use-before-define": "off",
-    "react/jsx-props-no-spreading": "off"
+    "react/jsx-props-no-spreading": "off",
+    "camelcase": [0, { "properties": "never" }]
   },
   "settings": {
     "import/resolver": {
       "typescript": {}
     }
-  }
+  },
+  "root": true
 }

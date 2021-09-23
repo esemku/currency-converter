@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<AmountInput /> renders correctly 1`] = `
+<div>
+  <div
+    class="makeStyles-root-1"
+  >
+    <label
+      class="makeStyles-label-3"
+      for="inputName"
+    >
+      label
+    </label>
+    <input
+      class="makeStyles-input-2"
+      data-testid="amountInput"
+      id="inputName"
+      inputmode="decimal"
+      name="inputName"
+      placeholder="e.g.  1,000.00"
+      type="text"
+      value=""
+    />
+  </div>
+</div>
+`;
